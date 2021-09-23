@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+}
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+    }
+    ::-webkit-scrollbar {
+    width: 0px; 
+    }
+    
+header{
+    width: 100%;
+    height: 15vh;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+header h1 {
+    font-size: 5vw;
+    color: white;
+    -webkit-text-stroke: 0.1vw gray;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+}
+header button{
+    font-size: 3vw;
+    color: #6ECB63;
+    text-align: center;
+    background-color: white;
+    border: 0.1px solid ;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+button ,#add-btn:hover{
+    color: white;
+    background-color: #6ECB63;
+
+
+}
+header h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: crimson;
+    -webkit-text-stroke: 0.1vw white;
+    border-right: 3px solid crimson;
+    overflow: hidden;
+    animation: logo 6s linear infinite;
+}
+@keyframes logo{
+    0%,10%,100% {
+        width:0%;
+
+    }
+    70%,90%{
+        width: 100%;
+
+    }
+ 
+}
+section{
+    display: flex;
+    height: 85vh;
+    justify-content: center;
+    justify-content: center;
+    flex-flow: wrap;
+    margin-top: 15px;
+    overflow: scroll;
+}
+
+.container .card{
+    position: relative;
+    max-width: 340px;
+    height: 215px;
+    background: rgb(255, 255, 255);
+    margin: 30px 10px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.4s linear;
+
+
+}
+.container .card:hover { 
+    height: 300px;
+}
+.container .card .image-box{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px;
+    text-align: center;
+}
+.container .card .image-box img{
+    max-width: 100%;
+    border-radius: 5px;
+
+}
+.container .card .content{
+    position: relative;
+    margin: 14px;
+    margin-top: -140px;
+    padding: 35px 15px;
+    text-align: start;
+    visibility: hidden;
+    transition: 0.4s linear;
+    
+    
+}
+.container .card .content h1 span{
+    color: gray;
+}
+.container .card .content h2 span{
+    color: gray;
+}
+.container .card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+}
+.add-book{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+
+  
+    
+ }
+.add-book .add-book-header{
+    width: 50%;
+    height: 10vh;
+    position: absolute;
+    top: 5%;
+    z-index: 1;
+    background-color: #6ECB63;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+
+
+  }
+  #cancel{
+      background-color: red;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 50%;
+      text-align: center;
+  }
+  #cancel:hover{
+      background-color: white;
+      color: red;
+  }
+.add-book .book-info{
+    width: 50%;
+    height: 75%;
+    position: absolute;
+    top: 5%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    text-align: center;
+ 
+   
+    
+} 
+.book-info div{
+    width: 100%;
+    margin: 25px;
+
+}
+.book-info div input[type="text"]{
+    width: 50%;
+    height: 3.5vh;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.add-btn{
+    position: absolute;
+    bottom: 30%;
+    z-index: 1;
+}
+.add-btn button{
+    font-size: 3vw;
+    color: #6ECB63;
+    text-align: center;
+    background-color: white;
+    border: 0.1px solid ;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
