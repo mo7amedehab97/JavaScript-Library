@@ -2,6 +2,11 @@ let showAddSection = document.querySelector("#book-btn");
 let addBookSection = document.querySelector(".add-book");
 let addBookInfo = document.querySelector("#add-book-info");
 let contentSec = document.querySelector("#structure")
+let bookName = document.getElementById("book-name");
+let bookUrl = document.getElementById("book-image");
+let bookAuthor = document.getElementById("book-author");
+
+
 
 
 showAddSection.addEventListener('click',()=>{
@@ -9,6 +14,9 @@ showAddSection.addEventListener('click',()=>{
 });
 
 addBookInfo.addEventListener('click', ()=>{
+    addNewBook(bookName,bookAuthor,bookUrl)
+    contentSec.textContent =""
+    book.forEach((e,i)=>createStructure(book,i))
     addBookSection.style.display = 'none'
 })
 
@@ -16,15 +24,40 @@ addBookInfo.addEventListener('click', ()=>{
 
 let book = [
     {
-        title: "eat pray love",
-        url:"https://upload.wikimedia.org/wikipedia/en/c/c4/Eat%2C_Pray%2C_Love_%E2%80%93_Elizabeth_Gilbert%2C_2007.jpg",
-        autors: "abo ehab"
+        title: "Song of Solomon",
+        url:"https://m.media-amazon.com/images/P/B000RMT40I.01._SCLZZZZZZZ_SX500_.jpg",
+        autors: "Toni Morrison"
+    },
+    {
+        title: "War and Peace",
+        url:"https://m.media-amazon.com/images/P/B00K2J7EQM.01._SCLZZZZZZZ_SX500_.jpg",
+        autors: "leo tolstoy"
+    },
+    {
+        title: "Ulysses",
+        url:"https://images4.penguinrandomhouse.com/cover/700jpg/9780679722762",
+        autors: "James Joyce"
+    },
+    {
+        title: "The Shadow of the Wind",
+        url:"https://images3.penguinrandomhouse.com/cover/700jpg/9780143126393",
+        autors: "Carlos Ruiz Zafon"
+    },
+    {
+        title: "The Lord of the Rings",
+        url:"https://images4.penguinrandomhouse.com/cover/700jpg/9780345339706",
+        autors: "J.R.R. Tolkien"
+    },
+    {
+        title: "Don Quixote",
+        url:"https://images3.penguinrandomhouse.com/cover/700jpg/9780679407584",
+        autors: "Miguel de Cervantes"
     }
 ]
 
-function createStructure(arr){
-    let titleSpan = arr[0].title;
-    let authorsSpan = arr[0].autors;
+function createStructure(arr, index){
+    let titleSpan = arr[index].title;
+    let authorsSpan = arr[index].autors;
 
 // create the holder div 
 let holder = document.createElement("div");
@@ -40,7 +73,7 @@ imageDiv.className = "image-box";
 
 // create image 
 let newImg = document.createElement("img")
-newImg.src = arr[0].url;
+newImg.src = arr[index].url;
 
 // create content div 
 let contentDiv = document.createElement("div");
@@ -71,4 +104,17 @@ contentSec.appendChild(holder)
 
 
 }
-createStructure(book)
+
+
+// function add book 
+function addNewBook(name,author,url){
+    let newObj ={
+        title: name.value,
+        url: url.value,
+        autors:author.value
+    }
+    return book.push(newObj)
+}
+
+// loop over the array books and foreach obj create card 
+book.forEach((e,i)=>createStructure(book,i))
