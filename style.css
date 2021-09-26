@@ -77,6 +77,9 @@ section{
     margin-top: 15px;
     overflow: scroll;
 }
+.container{
+
+}
 
 .container .card{
     position: relative;
@@ -87,20 +90,19 @@ section{
     padding: 25px 15px;
     display: flex;
     flex-direction: column;
-    transition: 0.4s linear;
+    transition: 0.4s linear; 
 
 
 }
 .container .card:hover { 
-    height: 300px;
+    height: 250px;
 }
 .container .card .image-box{
     position: relative;
     width: 200px;
     height: 285px;
     top: -60px;
-    left: 20px;
-    text-align: center;
+    text-align: start;
 }
 .container .card .image-box img{
     width: 200px;
@@ -112,7 +114,6 @@ section{
     position: relative;
     margin: 14px;
     margin-top: -140px;
-    /* padding: 35px 15px; */
     text-align: center;
     visibility: hidden;
     transition: 0.4s linear;
