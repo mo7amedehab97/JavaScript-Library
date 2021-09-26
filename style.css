@@ -80,8 +80,8 @@ section{
 
 .container .card{
     position: relative;
-    max-width: 340px;
-    height: 215px;
+    width: 200px;
+    height: 285px;
     background: rgb(255, 255, 255);
     margin: 30px 10px;
     padding: 25px 15px;
@@ -96,14 +96,15 @@ section{
 }
 .container .card .image-box{
     position: relative;
-    width: 260px;
-    height: 260px;
+    width: 200px;
+    height: 285px;
     top: -60px;
     left: 20px;
     text-align: center;
 }
 .container .card .image-box img{
-    max-width: 100%;
+    width: 200px;
+    height: 285px;
     border-radius: 5px;
 
 }
@@ -111,23 +112,24 @@ section{
     position: relative;
     margin: 14px;
     margin-top: -140px;
-    padding: 35px 15px;
-    text-align: start;
+    /* padding: 35px 15px; */
+    text-align: center;
     visibility: hidden;
     transition: 0.4s linear;
+    font-size: 12px;
+    
+
     
     
 }
-.container .card .content h1 span{
-    color: gray;
-}
-.container .card .content h2 span{
-    color: gray;
-}
+
 .container .card:hover .content{
     visibility: visible;
     opacity: 1;
     margin-top: -40px;
+    width: 100%;
+    text-align: start;
+
 }
 .add-book{
     position: relative;
@@ -186,22 +188,21 @@ section{
 } 
 .book-info div{
     width: 100%;
-    margin: 25px;
+    margin: 20px;
 
 }
 .book-info div input[type="text"]{
-    width: 50%;
-    height: 3.5vh;
+    width: 60%;
+    height: 35px;
     font-size: 20px;
     text-align: center;
     outline: none;
     border: 1px solid grey;
     border-radius: 5px;
-    margin-top: 5px;
 }
 .add-btn{
     position: absolute;
-    bottom: 30%;
+    bottom: 25%;
     z-index: 1;
 }
 .add-btn button{
@@ -212,4 +213,9 @@ section{
     border: 0.1px solid ;
     padding: 5px 10px;
     border-radius: 5px;
+}
+.add-btn button:hover{
+    background-color: #6ECB63;
+    color: white;
+
 }
